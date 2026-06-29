@@ -2,29 +2,29 @@
 // CHÉVERE CLICK STORE POS
 // ===============================
 
-const app=document.getElementById("app");
+const app = document.getElementById("app");
 
-let carrito=[];
-let numeroPedido=1;
+let carrito = [];
+let numeroPedido = 1;
 
 //==============================
 // PRODUCTOS
 //==============================
 
-const productos=[
+const productos = [
 
 {
 id:1,
 nombre:"Opción 1",
 precio:1.50,
-imagen:"images/Opcion1.jpg"
+imagen:"Opcion1.jpg"
 },
 
 {
 id:2,
 nombre:"Opción 2",
 precio:2.00,
-imagen:"images/Opcion2.jpg"
+imagen:"Opcion2.jpg"
 }
 
 ];
@@ -37,13 +37,13 @@ mostrarInicio();
 
 function mostrarInicio(){
 
-app.innerHTML=`
+app.innerHTML = `
 
 <div class="inicio">
 
 <div class="logoSuperior">
 
-<img src="images/Logo.png"
+<img src="Logo.png"
 class="logo">
 
 </div>
@@ -77,13 +77,13 @@ COMENZAR COMPRA
 
 function mostrarCatalogo(){
 
-let html=`
+let html = `
 
 <div class="encabezado">
 
 <div class="tituloTienda">
 
-<img src="images/Logo.png"
+<img src="Logo.png"
 class="logoMini">
 
 <div>
@@ -117,11 +117,11 @@ onclick="mostrarCarrito()">
 
 productos.forEach(producto=>{
 
-html+=`
+html += `
 
 <div class="card">
 
-<img src="${producto.imagen}">
+<img src="${producto.imagen}" alt="${producto.nombre}">
 
 <h3>${producto.nombre}</h3>
 
@@ -140,13 +140,13 @@ Agregar
 
 });
 
-html+=`
+html += `
 
 </div>
 
 `;
 
-app.innerHTML=html;
+app.innerHTML = html;
 
 }
 
@@ -156,8 +156,8 @@ app.innerHTML=html;
 
 function agregarProducto(id){
 
-const producto=productos.find(
-p=>p.id===id
+const producto = productos.find(
+p => p.id === id
 );
 
 carrito.push(producto);
@@ -172,9 +172,9 @@ mostrarCatalogo();
 
 function mostrarCarrito(){
 
-let total=0;
+let total = 0;
 
-let html=`
+let html = `
 
 <div class="carrito">
 
@@ -184,7 +184,7 @@ let html=`
 
 if(carrito.length===0){
 
-html+=`
+html += `
 
 <p>No has agregado productos</p>
 
@@ -198,7 +198,7 @@ Volver
 
 `;
 
-app.innerHTML=html;
+app.innerHTML = html;
 
 return;
 
@@ -206,9 +206,9 @@ return;
 
 carrito.forEach((producto,index)=>{
 
-total+=producto.precio;
+total += producto.precio;
 
-html+=`
+html += `
 
 <div class="productoCarrito">
 
@@ -239,7 +239,7 @@ onclick="eliminarProducto(${index})">
 
 });
 
-html+=`
+html += `
 
 <br>
 
@@ -283,12 +283,12 @@ Seguir Comprando
 
 `;
 
-app.innerHTML=html;
+app.innerHTML = html;
 
 }
 
 //==============================
-// ELIMINAR
+// ELIMINAR PRODUCTO
 //==============================
 
 function eliminarProducto(index){
@@ -300,12 +300,12 @@ mostrarCarrito();
 }
 
 //==============================
-// FINALIZAR
+// FINALIZAR COMPRA
 //==============================
 
 function finalizarCompra(){
 
-const nombre=document
+const nombre = document
 .getElementById("cliente")
 .value.trim();
 
@@ -317,20 +317,20 @@ return;
 
 }
 
-let total=0;
-let lista="";
+let total = 0;
+let lista = "";
 
 carrito.forEach(p=>{
 
-total+=p.precio;
+total += p.precio;
 
-lista+=`
+lista += `
 
 <li>
 
 ${p.nombre}
 
-* B/. ${p.precio.toFixed(2)}
+- B/. ${p.precio.toFixed(2)}
 
 </li>
 
@@ -338,7 +338,7 @@ ${p.nombre}
 
 });
 
-app.innerHTML=`
+app.innerHTML = `
 
 <div class="pedidoFinal">
 
@@ -382,7 +382,7 @@ B/. ${total.toFixed(2)}
 
 <p>
 
-Dirígete a Caja para realizar el pago
+Dirígete a Caja para realizar el pago.
 
 </p>
 
@@ -399,9 +399,13 @@ Nuevo Pedido
 
 numeroPedido++;
 
-carrito=[];
+carrito = [];
 
 }
+
+//==============================
+// NUEVO PEDIDO
+//==============================
 
 function nuevoPedido(){
 
