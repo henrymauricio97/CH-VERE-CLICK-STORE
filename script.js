@@ -35,42 +35,42 @@ id:1,
 nombre:"Opción 1",
 precio:1.50,
 categoria:"Snacks",
-imagen:"opcion1.jpg"
+imagen:"Opcion1.jpg"
 },
 {
 id:2,
 nombre:"Opción 2",
 precio:2.00,
 categoria:"Snacks",
-imagen:"opcion2.jpg"magen
+imagen:"Opcion2.jpg"magen
 },
 {
 id:3,
 nombre:"Opción 3",
 precio:1.25,
 categoria:"Bebidas",
-imagen:"opcion3.jpg"
+imagen:"Opcion3.jpg"
 },
 {
 id:4,
 nombre:"Opción 4",
 precio:3.00,
 categoria:"Accesorios",
-imagen:"opcion4.jpg"
+imagen:"Opcion4.jpg"
 },
 {
 id:5,
 nombre:"Opción 5",
 precio:2.75,
 categoria:"Accesorios",
-imagen:"opcion5.jpg"
+imagen:"Opcion5.jpg"
 },
 {
 id:6,
 nombre:"Opción 6",
 precio:1.75,
 categoria:"Snacks",
-imagen:"opcion6.jpg"
+imagen:"Opcion6.jpg"
 }
 ];
 //==============================
