@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHÉVERE CLICK STORE</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- ==========================
+HEADER
+=========================== -->
+<header class="header">
+<div class="logoArea">
+<img src="images/logo.png" class="logo">
+<div>
+<h1>CHÉVERE CLICK STORE</h1>
+<p>Lo que te gusta a un click</p>
+</div>
+</div>
+<button id="btnCarrito">
+🛒 <span id="cantidadCarrito">0</span>
+</button>
+</header>
+<!-- ==========================
+BUSCADOR
+=========================== -->
+<section class="buscador">
+<input
+type="text"
+id="buscar"
+placeholder="🔍 Buscar productos...">
+</section>
+<!-- ==========================
+BANNER
+=========================== -->
+<section class="banner">
+<h2>🎉 Promoción del Día</h2>
+<p>
+Compra 3 productos y recibe un Sticker GRATIS.
+</p>
+</section>
+<!-- ==========================
+CATEGORÍAS
+=========================== -->
+<section class="categorias">
+<button class="categoria activa" data-categoria="Todos">
+Todos
+</button>
+<button class="categoria" data-categoria="Snacks">
+🍭 Snacks
+</button>
+<button class="categoria" data-categoria="Bebidas">
+🥤 Bebidas
+</button>
+<button class="categoria" data-categoria="Accesorios">
+🎁 Accesorios
+</button>
+</section>
+<!-- ==========================
+CATÁLOGO
+=========================== -->
+<main id="catalogo" class="catalogo">
+</main>
+<!-- ==========================
+BOTÓN FLOTANTE
+=========================== -->
+<button id="carritoFlotante">
+🛒
+<span id="contador">
+0
+</span>
+</button>
+<!-- ==========================
+PANEL DEL CARRITO
+=========================== -->
+<div id="panelCarrito" class="panelCarrito">
+<div class="panelHeader">
+<h2>🛒 Mi Carrito</h2>
+<button id="cerrarPanel">
+✖
+</button>
+</div>
+<div id="listaCarrito">
+</div>
+<div class="panelFooter">
+    <h3 id="totalCarrito">
+        Total: B/.0.00
+    </h3>
+    <br>
+    <label>
+        Nombre del Cliente
+    </label>
+    <input
+        id="nombreCliente"
+        type="text"
+        placeholder="Escribe tu nombre">
+    <br><br>
+    <button id="continuarCompra">
+        Continuar a Caja
+    </button>
+</div>
+</div>
+<!-- ==========================
+FONDO OSCURO
+=========================== -->
+<div id="fondoOscuro">
+</div>
+<!-- ==========================
+MENSAJE FLOTANTE
+=========================== -->
+<div id="toast" class="toast">
+Producto agregado al carrito
+</div>
+<!--====================================
+PANTALLA PEDIDO CONFIRMADO
+=====================================-->
+<div id="pantallaConfirmacion" class="pantallaConfirmacion">
+    <div class="ticket">
+        <div class="checkGrande">
+            ✅
+        </div>
+        <h1>
+            PEDIDO CONFIRMADO
+        </h1>
+        <p id="numeroPedidoTicket"></p>
+        <p id="clienteTicket"></p>
+        <hr>
+        <div id="detalleTicket">
+        </div>
+        <hr>
+        <h2 id="totalTicket">
+        </h2>
+        <p>
+            Ahora dirígete a la estación de
+            <strong>CAJA</strong>
+        </p>
+        <button id="nuevoPedido">
+            NUEVO PEDIDO
+        </button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
