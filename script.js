@@ -393,16 +393,24 @@ nombre:nombre,
 productos:carritoAgrupado
 };
 try{
-const respuesta=await fetch(URL_SCRIPT,{
+console.log("Enviando pedido...");
+console.log(datos);
+const respuesta = await fetch(URL_SCRIPT,{
 method:"POST",
+mode:"cors",
+redirect:"follow",
 headers:{
 "Content-Type":"application/json"
 },
 body:JSON.stringify(datos)
 });
-const resultado=await respuesta.json();
-console.log(resultado);
+console.log("Status:",respuesta.status);
+console.log("OK:",respuesta.ok);
+const texto = await respuesta.text();
+console.log("Respuesta del servidor:");
+console.log(texto);
 }catch(error){
+console.error("ERROR:");
 console.error(error);
 }
 }
