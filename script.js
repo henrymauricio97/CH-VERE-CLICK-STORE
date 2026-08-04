@@ -79,7 +79,16 @@ imagen:"opcion6.jpg"
 let carrito = [];
 let categoriaActual = "Todos";
 let numeroPedido = 1;
-const URL_SCRIPT="https://script.google.com/macros/s/AKfycbwcZbejf0qGltw5us190hTeTTuolu7Q4YsKFL3U916k83IQJMgbLiM6vZFJnnlTG6Zr/exec";
+const firebaseConfig={
+apiKey:"AIzaSyBRDFT7gGp-_TYEhZMLww9ui9GOT6OJ9os",
+authDomain:"chevere-click-store.firebaseapp.com",
+projectId:"chevere-click-store",
+storageBucket:"chevere-click-store.firebasestorage.app",
+messagingSenderId:"344186483050",
+appId:"1:344186483050:web:b2aa1a48d4bd224c44f513"
+};
+firebase.initializeApp(firebaseConfig);
+const db=firebase.firestore();
 //==============================
 // MOSTRAR PRODUCTOS
 //==============================
