@@ -396,30 +396,21 @@ producto.total=
 producto.precio*
 producto.cantidad;
 });
-const datos={
-pedido:String(numeroPedido).padStart(3,"0"),
-nombre:nombre,
-productos:carritoAgrupado
-};
-try{
-console.log("Enviando pedido...");
-console.log(datos);
-const respuesta = await fetch(URL_SCRIPT,{
-method:"POST",
-mode:"cors",
-redirect:"follow",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify(datos)
+let total=0;
+carritoAgrupado.forEach(p=>{
+total+=p.total;
 });
-console.log("Status:",respuesta.status);
-console.log("OK:",respuesta.ok);
-const texto = await respuesta.text();
-console.log("Respuesta del servidor:");
-console.log(texto);
+try{
+await db.collection("pedidos").add({
+pedido:String(numeroPedido).padStart(3,"0"),
+cliente:nombre,
+productos:carritoAgrupado,
+total:total,
+estado:"PENDIENTE",
+fecha:new Date()
+});
+console.log("Pedido guardado en Firebase");
 }catch(error){
-console.error("ERROR:");
 console.error(error);
 }
 }
