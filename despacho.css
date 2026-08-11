@@ -1,0 +1,258 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+body{
+background:#f5f5f5;
+color:#333;
+min-height:100vh;
+}
+.header{
+background:white;
+padding:20px 35px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 3px 12px rgba(0,0,0,.12);
+position:sticky;
+top:0;
+z-index:10;
+}
+.logoArea{
+display:flex;
+align-items:center;
+gap:15px;
+}
+.logo{
+width:75px;
+height:75px;
+object-fit:contain;
+}
+.logoArea h1{
+font-size:28px;
+color:#9b59b6;
+margin-bottom:5px;
+}
+.logoArea p{
+font-size:17px;
+color:#777;
+}
+.estadoConexion{
+background:#e8f8ee;
+color:#16823b;
+padding:10px 18px;
+border-radius:25px;
+font-weight:bold;
+}
+.titulo{
+text-align:center;
+padding:35px 20px 20px;
+}
+.titulo h2{
+font-size:32px;
+color:#ff6600;
+margin-bottom:10px;
+}
+.titulo p{
+font-size:18px;
+color:#666;
+}
+.resumen{
+display:flex;
+justify-content:center;
+padding:10px 20px 25px;
+}
+.resumenCard{
+background:white;
+padding:18px 30px;
+border-radius:18px;
+box-shadow:0 4px 15px rgba(0,0,0,.1);
+display:flex;
+align-items:center;
+gap:15px;
+min-width:230px;
+}
+.resumenCard span{
+font-size:35px;
+}
+.resumenCard strong{
+display:block;
+font-size:30px;
+color:#ff6600;
+}
+.resumenCard small{
+display:block;
+color:#777;
+font-size:14px;
+}
+.listaPedidos{
+width:95%;
+max-width:1100px;
+margin:0 auto 40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+gap:25px;
+}
+.pedido{
+background:white;
+border-radius:20px;
+padding:25px;
+box-shadow:0 5px 18px rgba(0,0,0,.12);
+border-top:7px solid #ff6600;
+}
+.pedidoHeader{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px;
+}
+.numeroPedido{
+font-size:25px;
+font-weight:bold;
+color:#333;
+}
+.estadoPago{
+background:#dff7e7;
+color:#16823b;
+padding:7px 12px;
+border-radius:20px;
+font-size:13px;
+font-weight:bold;
+}
+.cliente{
+font-size:18px;
+margin-bottom:18px;
+}
+.productos{
+border-top:1px dashed #ccc;
+border-bottom:1px dashed #ccc;
+padding:15px 0;
+margin-bottom:15px;
+}
+.productoLinea{
+display:flex;
+justify-content:space-between;
+padding:7px 0;
+font-size:17px;
+}
+.total{
+text-align:right;
+font-size:24px;
+font-weight:bold;
+color:#ff3300;
+margin-bottom:20px;
+}
+.btnEntregar{
+width:100%;
+border:none;
+background:#ff6600;
+color:white;
+padding:16px;
+font-size:20px;
+font-weight:bold;
+border-radius:12px;
+cursor:pointer;
+transition:.2s;
+}
+.btnEntregar:hover{
+background:#e65500;
+transform:scale(1.02);
+}
+.btnEntregar:disabled{
+background:#aaa;
+cursor:not-allowed;
+transform:none;
+}
+.cargando,
+.mensajeVacio{
+text-align:center;
+padding:60px 20px;
+color:#777;
+}
+.mensajeVacio{
+width:90%;
+max-width:600px;
+margin:30px auto;
+background:white;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+.mensajeVacio div{
+font-size:60px;
+margin-bottom:15px;
+}
+.oculto{
+display:none!important;
+}
+.mensajeExito{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.65);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:100;
+color:white;
+text-align:center;
+}
+.mensajeExito .check{
+width:110px;
+height:110px;
+border-radius:50%;
+background:#32c76b;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:60px;
+margin-bottom:20px;
+}
+.mensajeExito h2{
+font-size:38px;
+margin-bottom:10px;
+}
+.mensajeExito p{
+font-size:22px;
+margin-bottom:25px;
+}
+.mensajeExito button{
+border:none;
+background:#ff6600;
+color:white;
+padding:14px 35px;
+font-size:18px;
+font-weight:bold;
+border-radius:10px;
+cursor:pointer;
+}
+@media(max-width:600px){
+.header{
+padding:15px;
+}
+.logo{
+width:55px;
+height:55px;
+}
+.logoArea h1{
+font-size:19px;
+}
+.logoArea p{
+font-size:13px;
+}
+.estadoConexion{
+font-size:11px;
+padding:8px 10px;
+}
+.titulo h2{
+font-size:24px;
+}
+.titulo p{
+font-size:15px;
+}
+.listaPedidos{
+grid-template-columns:1fr;
+width:92%;
+}
+}
