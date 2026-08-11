@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHÉVERE CLICK STORE - DESPACHO</title>
+<link rel="stylesheet" href="despacho.css">
+</head>
+<body>
+
+<header class="header">
+<div class="logoArea">
+<img src="Logo.png" class="logo">
+<div>
+<h1>CHÉVERE CLICK STORE</h1>
+<p>Estación de Despacho</p>
+</div>
+</div>
+<div class="estadoConexion">
+🟢 EN LÍNEA
+</div>
+</header>
+
+<section class="titulo">
+<h2>📦 PEDIDOS PARA DESPACHAR</h2>
+<p>Los pedidos aparecerán automáticamente cuando Caja confirme el pago.</p>
+</section>
+
+<section class="resumen">
+<div class="resumenCard">
+<span>📦</span>
+<div>
+<strong id="cantidadPedidos">0</strong>
+<small>Pedidos por entregar</small>
+</div>
+</div>
+</section>
+
+<main id="listaPedidos" class="listaPedidos">
+<div class="cargando">
+🔄 Cargando pedidos...
+</div>
+</main>
+
+<div id="mensajeVacio" class="mensajeVacio oculto">
+<div>📭</div>
+<h2>No hay pedidos para despachar</h2>
+<p>Cuando Caja marque un pedido como PAGADO, aparecerá aquí.</p>
+</div>
+
+<div id="mensajeExito" class="mensajeExito oculto">
+<div class="check">✅</div>
+<h2>¡PEDIDO ENTREGADO!</h2>
+<p id="pedidoEntregado"></p>
+<button id="cerrarMensaje">CONTINUAR</button>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="despacho.js"></script>
+
+</body>
+</html>
