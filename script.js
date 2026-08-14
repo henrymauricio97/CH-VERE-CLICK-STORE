@@ -32,7 +32,7 @@ const nuevoPedido = document.getElementById("nuevoPedido");
 const productos = [
 {
 id:1,
-nombre:"Opción 1",
+nombre:"Espejos",
 precio:1.50,
 categoria:"Snacks",
 imagen:"opcion1.jpg"
