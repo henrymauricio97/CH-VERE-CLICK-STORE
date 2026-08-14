@@ -33,44 +33,93 @@ const productos = [
 {
 id:1,
 nombre:"Espejos",
-precio:1.50,
-categoria:"Snacks",
-imagen:"opcion1.jpg"
+precio:1.00,
+categoria:"Accesorios",
+imagen:"espejos.jpg"
 },
 {
 id:2,
-nombre:"Opción 2",
-precio:2.00,
-categoria:"Snacks",
-imagen:"opcion2.jpg"
+nombre:"Vinchas",
+precio:1.75,
+categoria:"Accesorios",
+imagen:"vinchas.jpg"
 },
 {
 id:3,
-nombre:"Opción 3",
-precio:1.25,
-categoria:"Bebidas",
-imagen:"opcion3.jpg"
+nombre:"Perfumes de bolsillo",
+precio:2.00,
+categoria:"Accesorios",
+imagen:"perfumes.jpg"
 },
 {
 id:4,
-nombre:"Opción 4",
-precio:3.00,
+nombre:"Lip gloss",
+precio:1.25,
 categoria:"Accesorios",
-imagen:"opcion4.jpg"
+imagen:"lipgloss.jpg"
 },
 {
 id:5,
-nombre:"Opción 5",
-precio:2.75,
+nombre:"Parches para acné",
+precio:1.25,
 categoria:"Accesorios",
-imagen:"opcion5.jpg"
+imagen:"parches.jpg"
 },
 {
 id:6,
-nombre:"Opción 6",
-precio:1.75,
+nombre:"Labiales de fresa",
+precio:1.00,
+categoria:"Accesorios",
+imagen:"labiales.jpg"
+},
+{
+id:7,
+nombre:"Vasos de balón de fútbol",
+precio:2.00,
+categoria:"Accesorios",
+imagen:"vasos_futbol.jpg"
+},
+{
+id:8,
+nombre:"Nachos con queso",
+precio:1.50,
 categoria:"Snacks",
-imagen:"opcion6.jpg"
+imagen:"nachos.jpg"
+},
+{
+id:9,
+nombre:"Combo hot dog con soda",
+precio:1.50,
+categoria:"Snacks",
+imagen:"combo_hotdog.jpg"
+},
+{
+id:10,
+nombre:"Pastel en porciones",
+precio:1.00,
+categoria:"Snacks",
+imagen:"pastel.jpg"
+},
+{
+id:11,
+nombre:"Mini chocolates",
+precio:1.00,
+categoria:"Snacks",
+imagen:"chocolates.jpg"
+},
+{
+id:12,
+nombre:"Malva donut",
+precio:0.50,
+categoria:"Snacks",
+imagen:"malva_donut.jpg"
+},
+{
+id:13,
+nombre:"Gomitas minhocas",
+precio:1.50,
+categoria:"Snacks",
+imagen:"gomitas_minhocas.jpg"
 }
 ];
 //==============================
