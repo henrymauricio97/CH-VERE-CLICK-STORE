@@ -400,11 +400,12 @@ html+=`
 </div>
 `;
 });
-numeroPedidoTicket.innerHTML="<strong>Pedido #"+String(numeroPedido).padStart(3,"0")+"</strong>";
+const numeroPedidoActual = await obtenerSiguienteNumeroPedido();
+numeroPedidoTicket.innerHTML="<strong>Pedido #"+String(numeroPedidoActual).padStart(3,"0")+"</strong>";
 clienteTicket.innerHTML="<strong>Cliente:</strong> "+nombre;
 detalleTicket.innerHTML=html;
 totalTicket.innerHTML="TOTAL: B/. "+total.toFixed(2);
-await enviarPedidoGoogle(nombre);
+await enviarPedidoGoogle(nombre,numeroPedidoActual);
 pantallaConfirmacion.classList.add("visible");
 cerrarCarrito();
 }
@@ -418,12 +419,40 @@ carrito=[];
 actualizarContadores();
 mostrarCarrito();
 nombreCliente.value="";
-numeroPedido++;
 }
 //==============================
 // ENVIAR PEDIDO A GOOGLE SHEETS
 //==============================
-async function enviarPedidoGoogle(nombre){
+//==============================
+// GENERAR NUMERO UNICO DE PEDIDO
+//==============================
+async function obtenerSiguienteNumeroPedido(){
+const contadorRef=db.collection("configuracion").doc("contadorPedidos");
+try{
+const siguienteNumero=await db.runTransaction(async transaction=>{
+const contadorDoc=await transaction.get(contadorRef);
+let ultimoNumero=1;
+if(contadorDoc.exists){
+const datos=contadorDoc.data();
+if(typeof datos.ultimoNumero==="number"){
+ultimoNumero=datos.ultimoNumero;
+}
+}
+const siguiente=ultimoNumero+1;
+transaction.set(
+contadorRef,
+{ultimoNumero:siguiente},
+{merge:true}
+);
+return siguiente;
+});
+return siguienteNumero;
+}catch(error){
+console.error("No se pudo generar el número de pedido:",error);
+throw error;
+}
+}
+async function enviarPedidoGoogle(nombre,numeroPedidoActual){
 let carritoAgrupado=[];
 carrito.forEach(producto=>{
 const existe=carritoAgrupado.find(
@@ -451,7 +480,7 @@ total+=p.total;
 });
 try{
 await db.collection("pedidos").add({
-pedido:String(numeroPedido).padStart(3,"0"),
+pedido:String(numeroPedidoActual).padStart(3,"0"),
 cliente:nombre,
 productos:carritoAgrupado,
 total:total,
